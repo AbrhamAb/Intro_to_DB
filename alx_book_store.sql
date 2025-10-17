@@ -1,4 +1,4 @@
-create database alx_book_store;
+create database if not exists alx_book_store;
 
 use alx_book_store;
 
@@ -35,4 +35,6 @@ create table Order_Details (
     order_id int not null,
     book_id int not null,
     quantity Double(10,2),
+    foreign key (order_id) references Orders(order_id),
+    foreign key (book_id) references Books(book_id)
 );
